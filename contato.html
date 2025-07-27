@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizonte Turismo - Contato</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- Internal CSS Styles -->
+    <style>
+        /* Import Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Roboto:wght@400;700&display=swap');
+
+        /* Basic Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            /* New gradient background inspired by the reference */
+            background: linear-gradient(180deg, #e0f7ff 0%, #ffffff 100%);
+            color: #334155; /* Dark Slate Blue for text */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align to top for longer content */
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background-color: #ffffff;
+            /* Increased border-radius for a softer look */
+            border-radius: 24px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            padding: 30px 40px;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Header and Logo */
+        header {
+            margin-bottom: 30px;
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+        header .logo i {
+            font-size: 30px;
+            color: #0077b6; /* A richer blue */
+        }
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #023e7d; /* A deeper, more professional blue */
+        }
+        header .subtitle {
+            font-size: 15px;
+            color: #64748b; /* Slate Gray */
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #023e7d;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background-color: #0096c7;
+            border-radius: 2px;
+        }
+
+        /* Destinations Grid */
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: 1fr; /* Single column for mobile-first */
+            gap: 25px;
+            margin-bottom: 35px;
+        }
+
+        /* Destination Card */
+        .destination-card {
+            background: #fff;
+            /* More rounded borders */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .destination-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 30px rgba(0, 0, 0, 0.12);
+        }
+        .destination-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .destination-info {
+            padding: 20px;
+        }
+        .destination-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 8px;
+        }
+        .destination-price {
+            font-size: 18px;
+            font-weight: 700;
+            color: #059669; /* Emerald Green */
+            margin-bottom: 20px;
+        }
+        .reserve-button {
+            display: inline-block;
+            background: linear-gradient(90deg, #0096c7, #0077b6);
+            color: #fff;
+            padding: 12px 30px;
+            /* Pill-shaped button */
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 119, 182, 0.3);
+        }
+        .reserve-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0, 119, 182, 0.4);
+        }
+
+        /* Main CTA Button Section */
+        .cta-section {
+            margin-top: 20px;
+        }
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: #023e7d;
+            color: #fff;
+            padding: 15px 35px;
+            /* Pill-shaped button */
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(2, 62, 125, 0.3);
+        }
+        .cta-button:hover {
+            background: #012a4a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(2, 62, 125, 0.4);
+        }
+        .cta-button.secondary {
+            background: #64748b;
+        }
+        .cta-button.secondary:hover {
+            background: #475569;
+        }
+
+        /* Contact Page Links */
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+        .link-card {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            /* More rounded borders */
+            border-radius: 16px;
+            text-decoration: none;
+            color: #334155;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            border-color: #0096c7;
+            box-shadow: 0 6px 20px rgba(0, 150, 199, 0.15);
+            background-color: #f0f9ff;
+        }
+        .link-card i {
+            font-size: 22px;
+            width: 30px;
+            margin-right: 15px;
+        }
+        /* Specific Icon Colors */
+        .link-card .fa-whatsapp { color: #25d366; }
+        .link-card .fa-instagram { color: #e1306c; }
+        .link-card .fa-facebook-f { color: #1877f2; }
+        .link-card .fa-envelope { color: #f97316; }
+        .link-card .fa-map-marker-alt { color: #ef4444; }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        footer p {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 550px) {
+            .destinations-grid {
+                grid-template-columns: 1fr 1fr; /* Two columns for wider screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 24px;
+            }
+            .destination-info h3 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- HEADER -->
+        <header>
+            <div class="logo">
+                <i class="fas fa-paper-plane"></i>
+                <h1>Nossos Contatos</h1>
+            </div>
+            <p class="subtitle">Fale com a gente por um de nossos canais!</p>
+        </header>
+
+        <!-- SOCIAL LINKS -->
+        <main class="links">
+            <a href="https://wa.me/5511999999999?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20as%20viagens." target="_blank" class="link-card">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="#" target="_blank" class="link-card">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <a href="#" target="_blank" class="link-card">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="mailto:contato@horizonteturismo.com" target="_blank" class="link-card">
+                <i class="fas fa-envelope"></i>
+                <span>E-mail</span>
+            </a>
+            <a href="https://maps.app.goo.gl/dAnbYf3Yow4F59hf8" target="_blank" class="link-card">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Nossa Localização</span>
+            </a>
+        </main>
+
+        <!-- Back Button -->
+        <section class="cta-section">
+             <a href="index.html" class="cta-button secondary">
+                <i class="fas fa-arrow-left"></i> Voltar
+            </a>
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+            <p>&copy; 2024 Horizonte Turismo. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+</body>
+</html>

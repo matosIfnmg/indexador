@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Meta Tags para SEO e Compartilhamento -->
+    <title>Horizonte Turismo - Sua Próxima Aventura</title>
+    <meta name="description" content="Encontre os melhores pacotes de viagem para praias, serras e destinos de aventura. Reserve sua próxima viagem com a Horizonte Turismo.">
+    <meta property="og:title" content="Horizonte Turismo - Sua Próxima Aventura">
+    <meta property="og:description" content="Pacotes de viagem incríveis com preços imperdíveis.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop">
+    <meta property="og:type" content="website">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="https://em-content.zobj.net/source/microsoft-teams/363/airplane_2708-fe0f.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+    <!-- AOS.js (Animações de Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper.js (Slider) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+
+    <!-- Nosso CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- BOTÃO DE TEMA ESCURO -->
+    <button id="theme-toggle" class="theme-toggle">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
+
+    <!-- HEADER -->
+    <header class="header" data-aos="fade-down">
+        <div class="logo">
+            <i class="fas fa-paper-plane"></i>
+            <h1>Horizonte Turismo</h1>
+        </div>
+        <p class="subtitle">Sua próxima aventura começa aqui!</p>
+    </header>
+
+    <!-- SLIDER DE DESTAQUES -->
+    <section class="slider-container" data-aos="fade-up">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?q=80&w=1974&auto=format&fit=crop" alt="Praia paradisíaca"></div>
+                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=2070&auto=format&fit=crop" alt="Montanhas e serras"></div>
+                <div class="swiper-slide"><img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop" alt="Pessoa em uma trilha de aventura"></div>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- FILTROS DE PACOTES -->
+        <section class="filters" data-aos="fade-up">
+            <button class="filter-btn active" data-tipo="todos">Todos</button>
+            <button class="filter-btn" data-tipo="praia">Praia</button>
+            <button class="filter-btn" data-tipo="serra">Serra</button>
+            <button class="filter-btn" data-tipo="aventura">Aventura</button>
+        </section>
+
+        <!-- GRID DE PACOTES (Gerado dinamicamente pelo JS) -->
+        <section id="destinations-grid" class="destinations-grid"></section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer" data-aos="fade-up">
+        <p>&copy; 2024 Horizonte Turismo. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- MODAL DE RESERVA (Escondido por padrão) -->
+    <div id="reserva-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Confirmar Reserva</h2>
+            <p>Você está reservando o destino: <strong id="modal-destino-nome"></strong></p>
+            <form id="reserva-form">
+                <input type="text" id="modal-nome-cliente" placeholder="Seu nome completo" required>
+                <button type="submit" class="modal-submit-btn">
+                    <i class="fab fa-whatsapp"></i> Enviar no WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX DE IMAGEM (Escondido por padrão) -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close-btn">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/pacotes.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
